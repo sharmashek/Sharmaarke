@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aviator Predictor — Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="A demo Aviator predictor — experimental estimates only." />
+</head>
+<body>
+  <header class="topbar">
+    <div class="title-group">
+      <h1>Aviator Predictor</h1>
+      <p class="subtitle">Demo prototype — experimental estimates only</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel left">
+      <div class="card multiplier-card">
+        <div class="multiplier-label">Current multiplier</div>
+        <div id="multiplier" class="multiplier">—</div>
+        <div id="multiplierSub" class="multiplier-sub">Demo rounds</div>
+      </div>
+
+      <div class="card bestguess-card">
+        <div class="card-header">
+          <h2>Best Guess</h2>
+        </div>
+        <div class="bestguess-content">
+          <div class="guess-row">
+            <div class="guess-value" id="bestGuess">— x</div>
+            <div class="guess-confidence" id="guessConfidence">—%</div>
+          </div>
+          <div class="confidence-bar" aria-hidden="true">
+            <div id="confidenceFill" class="confidence-fill" style="width:0%"></div>
+          </div>
+          <div class="buttons">
+            <button id="predictBtn" class="btn primary">Generate Prediction</button>
+            <button id="resetBtn" class="btn ghost">Reset History</button>
+          </div>
+          <p class="muted">Model: simple demo heuristic using recent rounds (not a real ML model).</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel right">
+      <div class="card recent-card">
+        <div class="card-header">
+          <h2>Recent rounds</h2>
+        </div>
+        <ul id="recentList" class="list recent-list" aria-live="polite"></ul>
+        <div class="recent-controls">
+          <button id="simulateRound" class="btn small">Simulate New Round</button>
+          <button id="seedRounds" class="btn small ghost">Reseed Demo</button>
+        </div>
+      </div>
+
+      <div class="card history-card">
+        <div class="card-header">
+          <h2>Prediction history</h2>
+        </div>
+        <ul id="historyList" class="list history-list" aria-live="polite"></ul>
+        <p class="muted small">History is saved in your browser (localStorage).</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Disclaimer:</strong> Predictions are experimental estimates and cannot reliably predict the next result of a casino or random game. Use responsibly; check local laws.</p>
+    <p class="muted small">This demo is for educational purposes only.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
